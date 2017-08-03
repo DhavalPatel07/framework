@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test Animation</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+
+<div class="container pa-top main-bg">
+	<div class="row">
+    	<div class="main-image"><img src="bg-image.png"></div>
+        <span class="sun"><img src="sun.png"></span>
+        <span class="cloud1"><img src="cloud.svg"></span>
+        <span class="cloud2"><img src="cloud.svg"></span>
+    </div>
+</div>
+
+
+<style> 
+.container {
+	position: relative;
+}
+.main-image {
+	position: relative;
+	z-index: 10;
+}
+.sun{
+    position: absolute;
+	z-index: 1;
+	left:0;
+	right:0;
+	margin:0 auto;
+	text-align: center;
+	bottom: 0;
+	max-width: 160px;
+	margin:0 auto;
+    -webkit-animation: mymove 25s infinite; /* Safari 4.0 - 8.0 */
+    animation: mymove 25s infinite;
+}
+
+.box {
+	border: 1px solid #000000;
+	background: none;
+	display: inline-block;	
+	width: 451px;
+}
+.main-bg {
+	 -webkit-animation: background 25s infinite; /* Safari 4.0 - 8.0 */
+    animation: background 25s infinite;
+	position: relative;
+}
+.cloud1 {
+	position: absolute;
+	left: 0;
+	top: 20px;
+	max-width: 150px;
+	-webkit-animation: cloud1 30s infinite; /* Safari 4.0 - 8.0 */
+    animation: cloud1 30s infinite;
+}
+.cloud2 {
+	position: absolute;
+	right: 0;
+	top: 60px;
+	max-width: 150px;
+	-webkit-animation: cloud2 50s infinite; /* Safari 4.0 - 8.0 */
+    animation: cloud2 50s infinite;
+}
+
+
+/* Standard syntax */
+@keyframes mymove {
+	0%   { left: 0; right: 0; bottom:0;	     }
+	40%  { left: 0; right: 0; bottom: 400px; }
+	60%  { left: 0; right: 0; bottom: 400px; }
+	100% { left: 0; right: 0; bottom: 0px;	 }  }
+	
+@keyframes background {
+	0%   { background: #000000; }
+	40%  { background: #4ea5e8;  }
+	60%  { background: #4ea5e8;  }
+	100% { background: #000000;  }
+}	
+@keyframes cloud1 {
+	0%   { left: 0;  opacity: 0;}
+	10%   { opacity: 1; }
+	50%  { left: 900px; }
+	95%  { opacity: 1; }	
+	100% { left: 0; opacity: 0; }
+}	
+@keyframes cloud2 {
+	0%   { right: 0;  opacity: 0;}
+	10%   { opacity: 1; }
+	50%  { right: 900px; }
+	95%  { opacity: 1; }
+	100% { right: 0; opacity:0; }
+}	
+
+
+img {
+	max-width: 100%;
+}
+.pa-top {
+	padding-top: 150px;
+}
+</style>
+</body>
+</html>
