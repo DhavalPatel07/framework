@@ -7,8 +7,7 @@
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
@@ -22,11 +21,260 @@
         <span class="sun"><img src="sun.png"></span>
         <span class="cloud1"><img src="cloud.svg"></span>
         <span class="cloud2"><img src="cloud.svg"></span>
+        
+        
+        <div id="pictureframe">
+          <div id="bird">
+            <div id="body2"></div>
+            <div id="body1"></div>
+            <div id="wing-l"></div>  
+            <div id="wing-r"></div>  
+          </div>
+          <!--<div id="shadow"></div>-->
+        </div>
+        
+        <img src="http://s15.postimage.org/kozhy0eon/pajaro.gif" id="pajaro" class="piopio">
+        
     </div>
 </div>
 
 
+
 <style> 
+
+
+
+
+
+
+
+
+
+
+.piopio{
+	position:absolute;
+}
+#pajaro{
+	left:100%;
+	-moz-animation:volar 5s infinite;
+	-webkit-animation: volar 5s infinite;
+	-o-animation:volar 5s infinite;
+	-ms-animation:volar 5s infinite;
+	-khtml-animation:volar 5s infinite;
+	animation:volar 5s infinite;
+}
+@-moz-keyframes volar{
+	0%{
+		top:5px;
+	}25%{
+		top:100px;
+	}50%{
+		top:80px;
+	}75%{
+		top:25px;
+	}100%{
+		left:-177px;
+		top:102px;
+	}
+}
+@-webkit-keyframes volar{
+	0%{
+		margin-left:100%;
+		top:5px;
+	}25%{
+		top:100px;
+	}50%{
+		top:80px;
+	}75%{
+		top:25px;
+	}100%{
+		left:-177px;
+		top:102px;
+	}
+}
+@-o-keyframes volar{
+	0%{
+		top:5px;
+	}25%{
+		top:100px;
+	}50%{
+		top:80px;
+	}75%{
+		top:25px;
+	}100%{
+		left:-177px;
+		top:102px;
+	}
+}
+@-ms-keyframes volar{
+	0%{
+		top:5px;
+	}25%{
+		top:100px;
+	}50%{
+		top:80px;
+	}75%{
+		top:25px;
+	}100%{
+		left:-177px;
+		top:102px;
+	}
+}
+@-khtml-keyframes volar{
+	0%{
+		top:5px;
+	}25%{
+		top:100px;
+	}50%{
+		top:80px;
+	}75%{
+		top:25px;
+	}100%{
+		left:-177px;
+		top:102px;
+	}
+}
+@keyframes volar{
+	0%{
+		left:100%;
+		top:5px;
+	}25%{
+		top:100px;
+	}50px{
+		top:80px;
+	}75%{
+		top:25px;
+	}100%{
+		left:-177px;
+		top:102px;
+	}
+}
+
+
+
+
+
+
+
+
+
+@-webkit-keyframes flap-r {
+  0%,10%   { 	border-top-width: 60px; }
+  40%,60%  { 	border-top-width: 10px; }
+  100%     { 	border-top-width: 60px; }
+}
+
+@-webkit-keyframes flap-l {
+  0%       { 	border-bottom-width: 0px; }
+  40%,60%  { 	border-bottom-width: 40px; }
+  100%     { 	border-bottom-width: 0px; }
+}
+
+@-webkit-keyframes fly {
+  0%   { 	left: 0%; top:100px;-webkit-transform:scale3d(0.5,0.5,1) }
+  100% { 	left: 100%; top:100px; -webkit-transform:scale3d(1,1,1) }
+}
+
+@-webkit-keyframes bob {
+  0%   { 	top: 25px; }
+  50%   { 	top: 0px; }
+  100% { 	top: 25px; }
+}
+
+#pictureframe {
+  position:absolute;
+  width:100px;
+  margin-top: 50px;
+  -webkit-animation: fly 3.5s infinite linear;
+}
+
+#shadow {
+  position:absolute;
+  width: 0px; height: 0px; 
+  top: 140px; left: 00px;
+  border-width: 10px;
+  border-left-width:50px;
+  border-top-width:0px;
+  border-right-width: 40px;
+  border-color: transparent;
+  border-bottom-color: rgba(210,210,210,0.6);
+  border-style:solid;
+  -webkit-filter: blur(5px);
+}
+
+#shadow:after {
+  content: " ";
+  position:absolute;
+  width: 00px; height: 0px; 
+  top: 10px; left: -50px;
+  border-width: 10px;
+  border-left-width:50px;
+  border-bottom-width:0px;
+  border-right-width: 40px;
+  border-color: transparent;
+  border-top-color: rgba(210,210,210,0.6);
+  border-style:solid;
+}
+
+#bird div {
+  position:absolute;
+}
+
+#bird { 
+  position:absolute;
+  -webkit-animation: bob 0.7s infinite cubic-bezier(0.7, 0.7, 0.1, 0.4);
+ }
+
+
+#body1,#body2,#wing-l,#wing-r {
+  	width: 0px; height: 0px;
+    border-color: transparent;
+    border-style: solid;
+}
+#body1 {
+	border-width: 15px; 
+  border-left-width:25px;
+  border-top-width:15px;
+  border-right-width: 55px;
+  border-top-color: #333;
+}
+
+#body2 { 
+  left: 50px; bottom: 0px;
+	border-width: 10px; 
+  border-left-width:5px;
+  border-top-width:0px;
+  border-right-width: 15px;
+  border-bottom-color: #777;
+}
+
+#wing-l {
+  left: 22px; bottom: 0px; 
+	border-width: 60px; 
+  border-left-width:20px;
+  border-top-width:0px;
+  border-right-width: 6px;
+  border-bottom-color: #444;
+  -webkit-animation: flap-l 0.7s infinite; 
+}
+
+#wing-r {
+  left: 22px; top:0px;
+	border-width: 60px; 
+  border-left-width:20px;
+  border-bottom-width:0px;
+  border-right-width: 6px;
+  border-top-color: #777;
+  -webkit-animation: flap-r 0.7s infinite; 
+}
+
+
+#caption a {
+  position:absolute;
+  font-family: courier;
+  left:10px; bottom:10px;
+  color: #444;
+}
 .container {
 	position: relative;
 }
@@ -58,6 +306,7 @@
 	 -webkit-animation: background 25s infinite; /* Safari 4.0 - 8.0 */
     animation: background 25s infinite;
 	position: relative;
+	overflow: hidden;
 }
 .cloud1 {
 	position: absolute;
@@ -112,6 +361,432 @@ img {
 .pa-top {
 	padding-top: 150px;
 }
+
+/* ------------------------------------------------------------------------------ */
+
+
+html,body {margin:0; padding:10px; -webkit-backface-visibility:hidden;}
+
+/* text-based popup styling */
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 25px;
+  width:auto;
+  max-width: 400px;
+  margin: 0 auto; 
+}
+
+
+
+
+
+/* 
+
+====== Zoom effect ======
+
+*/
+.mfp-zoom-in {
+  
+  /* start state */
+  .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.2s ease-in-out; 
+    transform: scale(0.8); 
+  }
+  
+  &.mfp-bg {
+    opacity: 0;
+	  transition: all 0.3s ease-out;
+  }
+  
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+      opacity: 1;
+      transform: scale(1); 
+    }
+    &.mfp-bg {
+      opacity: 0.8;
+    }
+  }
+  
+  /* animate out */
+  &.mfp-removing {
+    
+    .mfp-with-anim {
+      transform: scale(0.8); 
+      opacity: 0;
+    }
+    &.mfp-bg {
+      opacity: 0;
+    }
+    
+  }
+  
+}
+
+
+/* 
+
+====== Newspaper effect ======
+
+*/
+.mfp-newspaper {
+  
+  /* start state */
+  .mfp-with-anim {
+    opacity: 0;
+    -webkit-transition: all 0.2s ease-in-out; 
+    transition: all 0.5s;
+    
+    transform: scale(0) rotate(500deg);
+  }
+  
+  &.mfp-bg {
+    opacity: 0;
+	  transition: all 0.5s;
+  }
+  
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+    &.mfp-bg {
+      opacity: 0.8;
+    }
+  }
+  
+  /* animate out */
+  &.mfp-removing {
+    
+    .mfp-with-anim {
+      transform: scale(0) rotate(500deg);
+      opacity: 0;
+    }
+    &.mfp-bg {
+      opacity: 0;
+    }
+    
+  }
+  
+}
+
+
+
+/* 
+
+====== Move-horizontal effect ======
+
+*/
+.mfp-move-horizontal {
+  
+  /* start state */
+  .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.3s;
+    
+    transform: translateX(-50px);
+  }
+  
+  &.mfp-bg {
+    opacity: 0;
+	  transition: all 0.3s;
+  }
+  
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    &.mfp-bg {
+      opacity: 0.8;
+    }
+  }
+  
+  /* animate out */
+  &.mfp-removing {
+    
+    .mfp-with-anim {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+    &.mfp-bg {
+      opacity: 0;
+    }
+    
+  }
+  
+}
+
+
+/* 
+
+====== Move-from-top effect ======
+
+*/
+.mfp-move-from-top {
+  
+  .mfp-content {
+   vertical-align:top; 
+  }
+  
+  /* start state */
+  .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.2s;
+    
+    transform: translateY(-100px);
+  }
+  
+  &.mfp-bg {
+    opacity: 0;
+	  transition: all 0.2s;
+  }
+  
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    &.mfp-bg {
+      opacity: 0.8;
+    }
+  }
+  
+  /* animate out */
+  &.mfp-removing {
+    
+    .mfp-with-anim {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    &.mfp-bg {
+      opacity: 0;
+    }
+    
+  }
+  
+}
+
+
+/* 
+
+====== 3d unfold ======
+
+*/
+.mfp-3d-unfold {
+  
+ 
+  .mfp-content {
+    perspective: 2000px; 
+  }
+  
+  /* start state */
+  .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform-style: preserve-3d;
+    transform: rotateY(-60deg);
+  }
+  
+  
+  &.mfp-bg {
+    opacity: 0;
+	  transition: all 0.5s;
+  }
+  
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+      opacity: 1;
+      transform: rotateY(0deg);
+    }
+    &.mfp-bg {
+      opacity: 0.8;
+    }
+  }
+  
+  /* animate out */
+  &.mfp-removing {
+    
+    .mfp-with-anim {
+      transform: rotateY(60deg);
+      opacity: 0;
+    }
+    &.mfp-bg {
+      opacity: 0;
+    }
+    
+  }
+  
+}
+
+
+
+
+/* 
+
+====== Zoom-out effect ======
+
+*/
+.mfp-zoom-out {
+  
+  /* start state */
+  .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.3s ease-in-out; 
+    transform: scale(1.3); 
+  }
+  
+  &.mfp-bg {
+    opacity: 0;
+	  transition: all 0.3s ease-out;
+  }
+  
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+      opacity: 1;
+      transform: scale(1); 
+    }
+    &.mfp-bg {
+      opacity: 0.8;
+    }
+  }
+  
+  /* animate out */
+  &.mfp-removing {
+    
+    .mfp-with-anim {
+      transform: scale(1.3); 
+      opacity: 0;
+    }
+    &.mfp-bg {
+      opacity: 0;
+    }
+    
+  }
+  
+}
+
+
+
+/* 
+
+====== "Hinge" close effect ======
+
+*/
+
+@keyframes hinge {
+	0% { transform: rotate(0); transform-origin: top left; animation-timing-function: ease-in-out; }	
+	20%, 60% { transform: rotate(80deg); transform-origin: top left; animation-timing-function: ease-in-out; }	
+	40% { transform: rotate(60deg); transform-origin: top left; animation-timing-function: ease-in-out; }	
+	80% { transform: rotate(60deg) translateY(0); opacity: 1; transform-origin: top left; animation-timing-function: ease-in-out; }	
+	100% { transform: translateY(700px); opacity: 0; }
+}
+
+.hinge {
+  animation-duration: 1s;
+	animation-name: hinge;
+}
+.mfp-with-fade {}
+.mfp-with-fade .mfp-bg {
+    opacity: 0;
+    transition: opacity .5s ease-out;
+  }
+  
+.mfp-with-fade .mfp-ready .mfp-content {
+     opacity: 1; 
+    }
+.mfp-with-fade .mfp-ready .mfp-bg {
+      opacity: 0.8; // background opacity
+    }
+  
+.mfp-removing .mfp-bg {
+      opacity: 0;
+    }
+
+
+
+
+/* preview styles */
+html {
+  font-family: "Calibri", "Trebuchet MS", "Helvetica", sans-serif;
+}
+h3 {
+  margin-top: 0;
+  font-size: 24px;
+}
+a,
+  a:visited {
+    color: #1760BF;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #c00;
+  }
+
+h4 {
+  margin: 24px 0 0 0;
+}
+
+
 </style>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script>
+jQuery('#inline-popups').magnificPopup({
+  delegate: 'a',
+  removalDelay: 500, //delay removal by X to allow out-animation
+  callbacks: {
+    beforeOpen: function() {
+       this.st.mainClass = this.st.el.attr('data-effect');
+    }
+  },
+  midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
+});
+
+
+// Image popups
+jQuery('#image-popups').magnificPopup({
+  delegate: 'a',
+  type: 'image',
+  removalDelay: 500, //delay removal by X to allow out-animation
+  callbacks: {
+    beforeOpen: function() {
+      // just a hack that adds mfp-anim class to markup 
+       this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+       this.st.mainClass = this.st.el.attr('data-effect');
+    }
+  },
+  closeOnContentClick: true,
+  midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
+});
+
+
+// Hinge effect popup
+jQuery('a.hinge').magnificPopup({
+  mainClass: 'mfp-with-fade',
+  removalDelay: 1000, //delay removal by X to allow out-animation
+  callbacks: {
+    beforeClose: function() {
+        this.content.addClass('hinge');
+    }, 
+    close: function() {
+        this.content.removeClass('hinge'); 
+    }
+  },
+  midClick: true
+});
+
+</script>
 </body>
 </html>
